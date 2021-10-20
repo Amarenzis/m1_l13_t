@@ -38,7 +38,7 @@ namespace Task1_BuildingClasses
 
                 //Выдача результатов
                 MultiBuilding building = new MultiBuilding(addressBuilding, lengthBuilding, widthBuilding, heightBuilding, levelBuilding);
-                building.MultiPrint();
+                building.Print();
             }
             //Отлавливаем исключения
             catch (ArgumentOutOfRangeException)
@@ -131,7 +131,7 @@ namespace Task1_BuildingClasses
             Height = h;
         }
         //Метод вывода информации
-        public void Print()
+        private protected void Print1()
         {
             Console.WriteLine("\nАдрес здания: {0}.\nДлина здания - {1:f2} м.\nШирина здания - {2:f2} м.\nВысота здания - {3:f2} м.", address, length, width, height);
         }
@@ -167,9 +167,9 @@ namespace Task1_BuildingClasses
             Level = lev;
         }
 
-        public void MultiPrint()
+        public void Print()
         {
-            Print();
+            Print1();
             Console.WriteLine("Этажность здания - {0} эт.", level);
         }
     }
