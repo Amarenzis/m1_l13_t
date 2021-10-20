@@ -36,9 +36,14 @@ namespace Task1_BuildingClasses
 
                 #endregion
 
-                //Выдача результатов
-                MultiBuilding building = new MultiBuilding(addressBuilding, lengthBuilding, widthBuilding, heightBuilding, levelBuilding);
-                building.MultiPrint();
+                //Выдача результатов.
+                
+                MultiBuilding building = new MultiBuilding(addressBuilding, lengthBuilding, widthBuilding, heightBuilding, levelBuilding);                
+                building.Print();
+
+                //Тесты работы родительского Print
+                //Building building1 = new Building(addressBuilding, lengthBuilding, widthBuilding, heightBuilding);
+                //building1.Print();
             }
             //Отлавливаем исключения
             catch (ArgumentOutOfRangeException)
@@ -167,9 +172,9 @@ namespace Task1_BuildingClasses
             Level = lev;
         }
 
-        public void MultiPrint()
+        new public void Print()
         {
-            Print();
+            base.Print();
             Console.WriteLine("Этажность здания - {0} эт.", level);
         }
     }
